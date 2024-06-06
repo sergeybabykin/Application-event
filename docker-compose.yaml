@@ -1,0 +1,41 @@
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:15
+    restart: "on-failure"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  server:
+    container_name: backend
+    build: ./server
+    ports:
+      - "5000:5000"
+    restart: on-failure
+    environment:
+      # - DATABASE_URI=postgresql://postgres:postgres@postgres:5432/postgres
+      - DATABASE_URI=postgresql://application_event_user:7aOVNkKM96X15UfovW334pzV3PZho74j@dpg-cpfmkcf109ks73bnfat0-a.frankfurt-postgres.render.com/application_event
+    volumes:
+      - ./server:/server
+    command: flask run --host=0.0.0.0 --port=5000
+    depends_on:
+      - postgres
+
+  client:
+    container_name: client
+    build: ./client
+    restart: on-failure
+    ports:
+      - "3000:3000"
+    command: serve -s build
+    depends_on:
+      - server
+
+volumes:
+  pgdata: {}
