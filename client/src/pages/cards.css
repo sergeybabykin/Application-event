@@ -1,0 +1,126 @@
+.cards-container {
+  position: relative;
+  margin: 50px 150px;
+  box-sizing: border-box;
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
+  position: relative;
+  width: minmax(300px, 400px);
+  border: 1px solid gray;
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 7px;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.card:hover {
+  background-color: whitesmoke;
+  border-color: black;
+}
+
+.card-image {
+  width: calc(100% - 20px);
+  max-height: 350px;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.card-header {
+  width: 100%;
+  display: grid;
+  grid-gap: 10px;
+  text-overflow: break-word;
+}
+.card-header-title {
+  font-size: 25px;
+  font-weight: 600px;
+}
+.card-header-subtitle {
+  font-size: 15px;
+  font-weight: 400px;
+}
+.card-footer {
+  position: relative;
+  border-top: 1px solid grey;
+  left: 10px;
+  width: calc(100% - 20px);
+}
+.card-date {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.tags {
+  margin: 5px 0;
+}
+
+.chip {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid black;
+}
+.chip-success {
+  border-color: #179900;
+  color: #179900;
+}
+.chip-error {
+  border-color: #990033;
+  color: #990033;
+}
+
+.raw-card {
+  font-size: 24px;
+  margin: 2em;
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: #990033;
+  cursor: pointer;
+  display: flex;
+  justify-content: unset;
+  color: white;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.add-btn:hover {
+  filter: brightness(1.1);
+}
+.add-btn:active {
+  filter: brightness(0.9);
+}
+
+.link-text {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #990033;
+  color: black;
+}
+.link-text:hover {
+  color: #990033;
+}
+.link-text:active {
+  color: #981127;
+}

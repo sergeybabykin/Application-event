@@ -1,0 +1,69 @@
+.auth {
+  position: relative;
+  width: 60%;
+  height: 100vh;
+  top: 5%;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1em;
+  box-sizing: border-box;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.auth img {
+  position: relative;
+  width: 40%;
+}
+
+input {
+  border-radius: 25px;
+  padding: 0.5em;
+  padding-left: 1em;
+  border: 1.5px solid #c21631;
+  line-height: 1.2;
+  width: 300px;
+  font-size: 25px;
+  outline-color: cornflowerblue;
+}
+
+input[type="password"] {
+  letter-spacing: 0.05em;
+}
+
+button {
+  position: relative;
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 0.5em;
+  border: 1.5px solid #c21631;
+  width: calc(100% - 4em);
+  color: #ffffff;
+  background-color: #c21631;
+  font-size: 25px;
+  margin: 0.5em 2em;
+  transition: all 0.1s linear;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #c21631;
+}
+
+button:active {
+  background-color: #ffffff;
+  color: #c21631;
+  filter: brightness(0.9);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+}

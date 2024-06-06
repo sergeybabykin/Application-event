@@ -1,0 +1,63 @@
+.table {
+  position: relative;
+  width: 92vw;
+  left: 4vw;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+body:has(.dropdown) {
+  overflow: hidden;
+}
+
+@media (any-hover: hover) {
+  #root:has(.dropdown) > *:not(.dropdown) {
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+
+.contextMenu {
+  position: absolute;
+  width: 200px;
+  background: whitesmoke;
+  z-index: 9999;
+  border: 1px solid black;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(50px, auto);
+  gap: 5px;
+  pointer-events: all !important;
+}
+.contextMenu * {
+  box-sizing: border-box;
+  margin: 0;
+  background: white;
+  border: 1px solid gray;
+  cursor: pointer !important;
+  padding: 5px;
+  z-index: 10000;
+}
+.contextMenu *:hover {
+  background: lightgray;
+}
+.contextMenu *:active {
+  background: gray;
+}
+
+.hidden-column {
+  width: 15px;
+  overflow: hidden;
+}
